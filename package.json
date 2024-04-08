@@ -1,0 +1,53 @@
+{
+  "name": "api-gateway-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "tsc --project ./tsconfig.json --watch && SET NODE_ENV=production & nodemon ./dist/server.js",
+    "build": "tsc --project ./tsconfig.json",
+    "start": "npm run build && SET NODE_ENV=production & node ./dist/server.js",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --fix --ext .ts",
+    "code-format": "prettier --config .prettierrc  --write src/**/*.ts",
+    "code-check": "prettier --config .prettierrc  --check src/**/*.ts",
+    "test": "jest --config ./jest.config.ts --no-cache --forceExit",
+    "test:route": "jest ./__test__/url.routes.test.ts"
+  },
+  "keywords": [],
+  "author": "Gihan",
+  "license": "",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.5",
+    "apollo-server-core": "^3.13.0",
+    "apollo-server-express": "^3.13.0",
+    "axios": "^1.6.8",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "graphql": "^16.8.1",
+    "graphql-http": "^1.22.0",
+    "graphql-playground-middleware-express": "^1.7.23",
+    "jest": "^29.7.0",
+    "nodeman": "^1.1.2",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.4",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/dotenv": "^8.2.0",
+    "@types/jest": "^29.5.12",
+    "@types/supertest": "^6.0.2",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "supertest": "^6.3.4",
+    "ts-jest": "^29.1.2"
+  }
+}
